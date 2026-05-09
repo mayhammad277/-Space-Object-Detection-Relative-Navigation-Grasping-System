@@ -36,16 +36,16 @@ Integrates **star tracker attitude determination** with **real-time target track
 
 space-grasping-system/
 ├── src/
-│   ├── __init__.py
-│   ├── star_tracker.py          # Star tracking & attitude determination
-│   ├── object_detector.py       # Multi-method object detection
-│   ├── position_estimator.py    # Distance & angle calculation
-│   ├── visual_servoing.py       # Navigation & approach control
-│   ├── telemetry.py             # Clean telemetry formatting
+│   ├── __init__.py              # Package init
+│   ├── star_tracker.py          # Star tracking & attitude
+│   ├── object_detector.py       # Multi-method detection
+│   ├── position_estimator.py    # Distance & angle
+│   ├── visual_servoing.py       # Approach controller
+│   ├── telemetry.py             # Serial telemetry
 │   └── utils.py                 # Shared utilities
 ├── config/
 │   ├── params.yaml              # Default configuration
-│   └── calibration.yaml         # Camera calibration data
+│   └── calibration.yaml         # Camera calibration
 ├── data/
 │   ├── templates/               # Star field templates
 │   ├── reference/               # Reference object images
@@ -65,8 +65,6 @@ space-grasping-system/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
-
 
 
 ### Key Features
