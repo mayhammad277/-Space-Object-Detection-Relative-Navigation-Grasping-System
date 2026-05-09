@@ -35,27 +35,41 @@ Integrates **star tracker attitude determination** with **real-time target track
 
 
 space-grasping-system/
-├── src/                         # Core Logic & Algorithms
-│   ├── star_tracker.py          # Star field matching & attitude determination
-│   ├── object_detector.py       # Multi-method (DL/Geometric) detection
-│   ├── position_estimator.py    # 6-DOF distance and angle calculation
-│   ├── visual_servoing.py       # IBVS/PBVS approach control loops
-│   ├── telemetry.py             # Serial communication & data logging
-│   └── utils.py                 # Math & coordinate transformations
-├── config/                      # System Configuration
-│   ├── params.yaml              # PID gains and detector thresholds
-│   └── calibration.yaml         # Intrinsic/extrinsic camera parameters
-├── data/                        # Resources & Assets
-│   ├── templates/               # Star catalog & constellation maps
-│   ├── reference/               # 3D models & reference object images
-│   └── calibration/             # Checkerboard images for CV setup
-├── models/                      # Weights for ML-based detection
-├── notebooks/                   # Development & R&D
-│   └── 01-03_system_tests       # Calibration and integration walk-throughs
-├── tests/                       # Validation Suite
-│   └── test_*.py                # Unit tests for core modules
-├── main.py                      # Application entry point
-└── requirements.txt             # Environment dependencies
+├── src/                        # Core Logic & Algorithms
+│   ├── star_tracker.py         # Star field matching & attitude determination
+│   ├── object_detector.py      # Multi-method (DL/Geometric) detection
+│   ├── position_estimator.py   # 6-DOF distance and angle calculation
+│   ├── visual_servoing.py      # IBVS/PBVS approach control loops
+│   ├── telemetry.py            # Serial communication & data logging
+│   └── utils.py                # Math & coordinate transformations
+│
+├── config/                     # System Configuration
+│   ├── params.yaml             # PID gains and detector thresholds
+│   └── calibration.yaml        # Intrinsic/extrinsic camera parameters
+│
+├── data/                       # Resources & Assets
+│   ├── templates/              # Star catalog & constellation maps
+│   ├── reference/              # 3D models & reference object images
+│   └── calibration/            # Checkerboard images for CV setup
+│
+├── models/                     # Weights for ML-based detection
+│
+├── notebooks/                  # Development & R&D
+│   ├── 01_camera_calibration.ipynb
+│   ├── 02_object_detection_test.ipynb
+│   └── 03_system_integration_test.ipynb
+│
+├── tests/                      # Validation Suite
+│   ├── test_detector.py
+│   ├── test_position_estimator.py
+│   └── test_visual_servoing.py
+│
+├── main.py                     # Application entry point
+├── requirements.txt            # Environment dependencies
+├── setup.py                    # Package installation script
+├── .gitignore                  # Version control exclusions
+├── LICENSE                     # Project licensing
+└── README.md                   # Project documentation
 
 
 
