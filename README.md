@@ -126,3 +126,24 @@ python main.py --video fl3.mp4 --star-tracker
 - ORIENTING	Star tracker active	Computes absolute attitude
 - HOLDING	Position hold	Maintains current state
 - ERROR	Target lost	Safety stop, re-enters scanning
+
+
+
+
+🔧 Hardware Setup
+Monocular Mode
+
+Camera (USB/CSI) → Compute → Control Commands → Robotic Arm
+
+
+Stereo Mode
+
+Left Camera ─┐
+             ├→ Stereo Depth → Compute → Control Commands
+Right Camera ┘
+
+
+With Star Tracker
+Star Camera ─→ Attitude ─┐
+                          ├→ Sensor Fusion → Navigation Solution
+Object Camera ─→ Position ┘
