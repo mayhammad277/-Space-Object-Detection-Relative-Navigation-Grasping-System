@@ -14,6 +14,7 @@ Integrates **star tracker attitude determination** with **real-time target track
 ---
 
 ## 🎯 System Overview
+```text
 
 ┌─────────────────────────────────────────────────────────────┐
 │ SPACE GRASPING SYSTEM │
@@ -27,7 +28,7 @@ Integrates **star tracker attitude determination** with **real-time target track
 └─────────────────────────────────────────────────────────────┘
 
 
-
+```
 
 
 
