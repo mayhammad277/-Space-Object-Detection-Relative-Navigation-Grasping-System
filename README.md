@@ -32,7 +32,7 @@ Integrates **star tracker attitude determination** with **real-time target track
 
 
 
-
+```text
 
 space-grasping-system/
 ├── src/                        # Core Logic & Algorithms
@@ -70,6 +70,7 @@ space-grasping-system/
 ├── .gitignore                  # Version control exclusions
 ├── LICENSE                     # Project licensing
 └── README.md                   # Project documentation
+```
 
 
 
