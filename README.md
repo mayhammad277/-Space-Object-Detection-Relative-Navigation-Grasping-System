@@ -35,36 +35,28 @@ Integrates **star tracker attitude determination** with **real-time target track
 
 
 space-grasping-system/
-├── src/
-│   ├── __init__.py              # Package init
-│   ├── star_tracker.py          # Star tracking & attitude
-│   ├── object_detector.py       # Multi-method detection
-│   ├── position_estimator.py    # Distance & angle
-│   ├── visual_servoing.py       # Approach controller
-│   ├── telemetry.py             # Serial telemetry
-│   └── utils.py                 # Shared utilities
-├── config/
-│   ├── params.yaml              # Default configuration
-│   └── calibration.yaml         # Camera calibration
-├── data/
-│   ├── templates/               # Star field templates
-│   ├── reference/               # Reference object images
-│   └── calibration/             # Calibration images
-├── models/                      # Pre-trained weights
-├── notebooks/
-│   ├── 01_camera_calibration.ipynb
-│   ├── 02_object_detection_test.ipynb
-│   └── 03_system_integration_test.ipynb
-├── tests/
-│   ├── test_detector.py
-│   ├── test_position_estimator.py
-│   └── test_visual_servoing.py
-├── main.py                      # Entry point
-├── requirements.txt
-├── setup.py
-├── .gitignore
-├── LICENSE
-└── README.md
+├── src/                         # Core Logic & Algorithms
+│   ├── star_tracker.py          # Star field matching & attitude determination
+│   ├── object_detector.py       # Multi-method (DL/Geometric) detection
+│   ├── position_estimator.py    # 6-DOF distance and angle calculation
+│   ├── visual_servoing.py       # IBVS/PBVS approach control loops
+│   ├── telemetry.py             # Serial communication & data logging
+│   └── utils.py                 # Math & coordinate transformations
+├── config/                      # System Configuration
+│   ├── params.yaml              # PID gains and detector thresholds
+│   └── calibration.yaml         # Intrinsic/extrinsic camera parameters
+├── data/                        # Resources & Assets
+│   ├── templates/               # Star catalog & constellation maps
+│   ├── reference/               # 3D models & reference object images
+│   └── calibration/             # Checkerboard images for CV setup
+├── models/                      # Weights for ML-based detection
+├── notebooks/                   # Development & R&D
+│   └── 01-03_system_tests       # Calibration and integration walk-throughs
+├── tests/                       # Validation Suite
+│   └── test_*.py                # Unit tests for core modules
+├── main.py                      # Application entry point
+└── requirements.txt             # Environment dependencies
+
 
 
 ### Key Features
