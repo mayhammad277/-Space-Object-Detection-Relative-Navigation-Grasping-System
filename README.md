@@ -131,9 +131,15 @@ python main.py --video fl3.mp4 --star-tracker
 
 
 🔧 Hardware Setup
+
+
+
 Monocular Mode
 
 Camera (USB/CSI) → Compute → Control Commands → Robotic Arm
+
+
+
 
 
 Stereo Mode
@@ -144,6 +150,9 @@ Right Camera ┘
 
 
 With Star Tracker
+
+
+
 Star Camera ─→ Attitude ─┐
                           ├→ Sensor Fusion → Navigation Solution
 Object Camera ─→ Position ┘
