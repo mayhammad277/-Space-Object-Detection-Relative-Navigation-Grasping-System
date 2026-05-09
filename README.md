@@ -140,6 +140,7 @@ python main.py --video fl3.mp4 --star-tracker
 
 🔧 Hardware Setup
 
+```text
 
 
 Monocular Mode
@@ -164,3 +165,36 @@ With Star Tracker
 Star Camera ─→ Attitude ─┐
                           ├→ Sensor Fusion → Navigation Solution
 Object Camera ─→ Position ┘
+
+## Pre-Processing Pipeline
+
+```
+
+```text
+
+
+Frame Input
+    │
+    ▼
+┌─────────────────┐
+│ Object Detection │ ─── YOLO / Color / ORB
+└────────┬────────┘
+         │ bbox, centroid, width_px
+         ▼
+┌─────────────────────┐
+│ Position Estimation │ ─── Distance + Angle
+└────────┬────────────┘
+         │ distance_cm, angle_deg
+         ▼
+┌──────────────────────┐
+│ Visual Servoing      │ ─── PID Control
+│ (Approach Controller)│
+└────────┬─────────────┘
+         │ linear_vel, angular_vel
+         ▼
+┌─────────────────┐
+│ Motor Commands   │ ─── Robotic Arm / Platform
+└─────────────────┘
+
+
+```
