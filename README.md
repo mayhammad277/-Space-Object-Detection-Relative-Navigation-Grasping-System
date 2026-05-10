@@ -231,3 +231,11 @@ Ready to grasp when:
   2. distance <= grasp_dist + 3cm
   3. angular_error < alignment_threshold
 ```
+
+
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e2ea9922-53f0-441a-bf37-296fc52fbb64" />
+
