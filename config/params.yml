@@ -1,0 +1,79 @@
+# =============================================================================
+# Space Object Detection, Relative Navigation & Grasping System
+# Configuration File
+# =============================================================================
+
+# --- Camera Parameters ---
+camera:
+  focal_length: 900        # Pixels (will be auto-calibrated)
+  sensor_width_mm: 3.6
+  resolution: [640, 480]   # [width, height]
+  fx: 600                  # From calibration (overrides focal_length if set)
+  fy: 600
+  cx: 320
+  cy: 240
+  distortion_coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+# --- Object Detection ---
+detection:
+  method: "yolo"           # Options: "yolo", "color_threshold", "feature_match"
+  yolo_model: "yolov8n.pt" # Path to YOLO model weights
+  target_class: "any"      # Target object class name
+  confidence_threshold: 0.5
+  known_width_cm: 10.0      # Real width of target object in centimeters
+  min_contour_area: 500     # Minimum area for color detection
+  
+  # Color thresholding (HSV)
+  hsv_lower: [20, 100, 100]
+  hsv_upper: [30, 255, 255]
+  
+  # Feature matching
+  reference_image: null     # Path to reference image
+
+# --- Position Estimation ---
+position:
+  method: "monocular"       # Options: "monocular", "stereo"
+  min_distance_cm: 5.0
+  max_distance_cm: 500.0
+  distance_filter_alpha: 0.8  # EMA smoothing factor (higher = smoother)
+  history_length: 10          # Buffer size for median filtering
+
+# --- Stereo Vision (if method="stereo") ---
+stereo:
+  baseline_cm: 6.0           # Distance between cameras
+
+# --- Visual Servoing / Navigation ---
+navigation:
+  grasping_distance_cm: 15.0
+  safety_margin_cm: 5.0
+  alignment_threshold_deg: 2.0
+  max_approach_angle_deg: 30.0
+  approach_speed: 0.5         # m/s maximum forward speed
+  
+  # PID gains
+  Kp_linear: 0.5
+  Ki_linear: 0.1
+  Kd_linear: 0.05
+  Kp_angular: 0.3
+  
+  # Target lost timeout
+  max_frames_lost: 30
+
+# --- Star Tracker ---
+star_tracker:
+  enabled: true
+  orientation_update_rate_hz: 5
+  template_directory: "data/templates/"
+
+# --- Telemetry ---
+telemetry:
+  output_format: "json"     # Options: "serial", "json", "both"
+  serial_port: null         # "/dev/ttyUSB0" for Raspberry Pi
+  baud_rate: 115200
+
+# --- System ---
+system:
+  debug_mode: false
+  log_level: "INFO"         # DEBUG, INFO, WARNING, ERROR
+  save_output_video: false
+  output_video_path: "output/grasping_output.mp4"
