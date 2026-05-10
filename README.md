@@ -210,3 +210,24 @@ dang,<angle_deg>,dist,<distance_cm>,mode,<system_mode>,scam,<star_constellation>
 
 
 ```
+
+
+
+🎮 Control Logic
+## Object Detection Decision Tree
+
+```text
+Is target detected?
+├── YES → Lock target → Estimate position → Compute approach velocity
+└── NO  → Count lost frames
+          ├── Lost < threshold → Use last known position (coast)
+          └── Lost > threshold → Enter SCANNING mode
+```
+
+## Grasping Conditions
+```text
+Ready to grasp when:
+  1. target_aligned == True      (angle error < 2°)
+  2. distance <= grasp_dist + 3cm
+  3. angular_error < alignment_threshold
+```
