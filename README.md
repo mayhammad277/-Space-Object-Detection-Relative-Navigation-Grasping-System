@@ -198,3 +198,15 @@ Frame Input
 
 
 ```
+
+
+📡 Telemetry Protocol
+
+
+```text
+
+
+dang,<angle_deg>,dist,<distance_cm>,mode,<system_mode>,scam,<star_constellation>,x,<checksum>
+
+
+```
